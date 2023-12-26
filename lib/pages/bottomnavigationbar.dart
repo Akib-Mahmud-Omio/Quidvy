@@ -57,7 +57,7 @@ class _BottomState extends State<Bottom> {
                   });
                 },
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0), // Added padding
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0), 
                   child: Icon(
                     Icons.pie_chart_rounded,
                     size: 30,
@@ -72,7 +72,7 @@ class _BottomState extends State<Bottom> {
                   });
                 },
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 23.0), // Added padding
+                  padding: const EdgeInsets.symmetric(horizontal: 23.0), 
                   child: Icon(
                     Icons.home,
                     size: 30,
@@ -87,7 +87,7 @@ class _BottomState extends State<Bottom> {
                   });
                 },
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 28.0), // Added padding
+                  padding: const EdgeInsets.symmetric(horizontal: 28.0), 
                   child: Icon(
                     Icons.account_balance_wallet_outlined,
                     size: 30,
