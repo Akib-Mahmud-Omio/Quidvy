@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quidvy/pages/app_drawer.dart';
+import 'package:quidvy/pages/homepage.dart';
+import 'package:quidvy/pages/statistics.dart';
 
 
 class Bottom extends StatefulWidget {
