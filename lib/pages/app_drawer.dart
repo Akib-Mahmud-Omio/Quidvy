@@ -28,3 +28,48 @@ class AppDrawer extends StatelessWidget {
         ],
       ),
     ),
+            ListTile(
+              leading: Icon(Icons.notifications),
+              title: Text('Notifications'),
+              onTap: () {
+                print('Notifications button tapped');
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.dark_mode),
+              title: Text('Dark Mode'),
+              onTap: () {
+                print('Dark Mode button tapped');
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.info),
+              title: Text('About Us'),
+              onTap: () {
+                print('About Us button tapped');
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.help),
+              title: Text('Help'),
+              onTap: () {
+                print('Help button tapped');
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text('Logout'),
+              onTap: () {
+                print('Logout button tapped');
+                Navigator.pop(context);
+              },
+            ),
+          ],
+      ),
+    );
+  }
+}
