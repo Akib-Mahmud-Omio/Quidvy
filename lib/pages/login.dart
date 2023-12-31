@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:quidvy/pages/bottomnavigationbar.dart';
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,10 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Bottom()),
+                );
               },
               child: Text('Log in'),
             ),
