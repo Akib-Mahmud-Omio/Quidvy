@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quidvy/pages/bottomnavigationbar.dart';
+import 'package:quidvy/pages/login.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:Bottom(),
+      home:LoginPage(),
     );
   }
 
