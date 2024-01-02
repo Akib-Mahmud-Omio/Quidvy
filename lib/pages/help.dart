@@ -27,6 +27,14 @@ class Help extends StatelessWidget {
             ),
           ),
         ),
+    floatingActionButton: FloatingActionButton(
+    onPressed: () {
+    Navigator.pop(context);
+    },
+      child: Icon(Icons.arrow_back),
+      backgroundColor: Colors.orange,
+    ),
+
       ),
     );
   }
