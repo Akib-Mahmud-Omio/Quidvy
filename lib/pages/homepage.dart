@@ -10,7 +10,39 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child:_top(),
+        child:CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: SizedBox(height: 280, child: _top()),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Transactions History',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 19,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    'See all',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 15,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],  //Silver
+      ),
       ),
     );
   }
