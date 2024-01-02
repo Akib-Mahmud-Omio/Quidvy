@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quidvy/pages/help.dart';
+import 'package:quidvy/pages/about_us.dart';
 
 
 class app_drawer extends StatefulWidget {
@@ -56,16 +58,16 @@ class _app_drawerstate extends State<app_drawer>{
               leading: Icon(Icons.info),
               title: Text('About Us'),
               onTap: () {
-                print('About Us button tapped');
-                Navigator.pop(context);
+               
               },
             ),
             ListTile(
               leading: Icon(Icons.help),
               title: Text('Help'),
-              onTap: () {
-                print('Help button tapped');
-                Navigator.pop(context);
+              onTap: () {Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Help()),
+              );
               },
             ),
             ListTile(
