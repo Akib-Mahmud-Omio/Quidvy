@@ -58,7 +58,10 @@ class _app_drawerstate extends State<app_drawer>{
               leading: Icon(Icons.info),
               title: Text('About Us'),
               onTap: () {
-               
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutUs()),
+                );
               },
             ),
             ListTile(
