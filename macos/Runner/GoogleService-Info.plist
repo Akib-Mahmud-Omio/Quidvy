@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAI_St4ZCPtxy5SxORKg3l_8VusSESwaOU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>180778005523</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.quidvy.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>quidvy-62ro</string>
+	<key>STORAGE_BUCKET</key>
+	<string>quidvy-62ro.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:180778005523:ios:b238e7bb4ad828d4d2fbe6</string>
+</dict>
+</plist>

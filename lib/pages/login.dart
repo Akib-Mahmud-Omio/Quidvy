@@ -1,11 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:quidvy/pages/bottomnavigationbar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 class LoginPage extends StatelessWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  Future<void> _signInWithEmailAndPassword(BuildContext context) async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Bottom()),
+      );
+    } on FirebaseAuthException catch (e) {
+      print("Error: ${e.message}");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quidvy',),
+        title: Text('Quidvy'),
       ),
       backgroundColor: Colors.orange,
       body: Padding(
@@ -15,12 +33,14 @@ class LoginPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TextField(
+              controller: emailController,
               decoration: InputDecoration(
                 hintText: 'Email',
               ),
             ),
             SizedBox(height: 12.0),
             TextField(
+              controller: passwordController,
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Password',
@@ -28,12 +48,7 @@ class LoginPage extends StatelessWidget {
             ),
             SizedBox(height: 20.0),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Bottom()),
-                );
-              },
+              onPressed: () => _signInWithEmailAndPassword(context),
               child: Text('Log in'),
             ),
             SizedBox(height: 12.0),
@@ -62,6 +77,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+
 
 class SignUpPage extends StatelessWidget {
   @override
