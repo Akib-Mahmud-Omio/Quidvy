@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "180778005523",
+    "project_id": "quidvy-62ro",
+    "storage_bucket": "quidvy-62ro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180778005523:android:d301df8516011620d2fbe6",
+        "android_client_info": {
+          "package_name": "com.example.quidvy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2zKl9TjmC0e9KmZI_DGp3uZRYrILinFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
