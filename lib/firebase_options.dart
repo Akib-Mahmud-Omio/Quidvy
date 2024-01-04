@@ -2,7 +2,6 @@
 // ignore_for_file: lines_longer_than_80_chars, avoid_classes_with_only_static_members
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
-
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
@@ -46,17 +45,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyBBT27BOJt7alb7VcxniBnjkNqy_x3i-9Q',
-    appId: '1:180778005523:web:2c146c033682db40d2fbe6',
+    appId: '1:180778005523:web:06e9c851d32b82b6d2fbe6',
     messagingSenderId: '180778005523',
     projectId: 'quidvy-62ro',
     authDomain: 'quidvy-62ro.firebaseapp.com',
     storageBucket: 'quidvy-62ro.appspot.com',
-    measurementId: 'G-RZCJS7DWGW',
+    measurementId: 'G-TVRK9CH3JT',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyC2zKl9TjmC0e9KmZI_DGp3uZRYrILinFc',
-    appId: '1:180778005523:android:1f4c5a552ad727afd2fbe6',
+    appId: '1:180778005523:android:d301df8516011620d2fbe6',
     messagingSenderId: '180778005523',
     projectId: 'quidvy-62ro',
     storageBucket: 'quidvy-62ro.appspot.com',
@@ -64,7 +63,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAI_St4ZCPtxy5SxORKg3l_8VusSESwaOU',
-    appId: '1:180778005523:ios:f9e0ddf4e287a972d2fbe6',
+    appId: '1:180778005523:ios:046f26e837185a14d2fbe6',
     messagingSenderId: '180778005523',
     projectId: 'quidvy-62ro',
     storageBucket: 'quidvy-62ro.appspot.com',
@@ -73,7 +72,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyAI_St4ZCPtxy5SxORKg3l_8VusSESwaOU',
-    appId: '1:180778005523:ios:b238e7bb4ad828d4d2fbe6',
+    appId: '1:180778005523:ios:da24f38f7c137581d2fbe6',
     messagingSenderId: '180778005523',
     projectId: 'quidvy-62ro',
     storageBucket: 'quidvy-62ro.appspot.com',

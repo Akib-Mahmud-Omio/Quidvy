@@ -49,6 +49,7 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () => _signInWithEmailAndPassword(context),
+
               child: Text('Log in'),
             ),
             SizedBox(height: 12.0),
