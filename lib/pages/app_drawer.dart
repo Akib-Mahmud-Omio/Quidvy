@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quidvy/pages/help.dart';
 import 'package:quidvy/pages/about_us.dart';
+import 'package:quidvy/pages/resource.dart';
 
 
 class app_drawer extends StatefulWidget {
@@ -61,6 +62,16 @@ class _app_drawerstate extends State<app_drawer>{
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => AboutUs()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.tips_and_updates_outlined),
+              title: Text('Finance Tips'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EducationalResourcesScreen()),
                 );
               },
             ),

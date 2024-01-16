@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quidvy/pages/list.dart';
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
