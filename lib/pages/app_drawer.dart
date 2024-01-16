@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quidvy/pages/help.dart';
 import 'package:quidvy/pages/about_us.dart';
-
+import 'package:quidvy/pages/interest_calculator.dart';
+import 'package:quidvy/pages/currency.dart';
+import 'package:quidvy/pages/compound_calculator.dart';
 
 class app_drawer extends StatefulWidget {
   const app_drawer({Key? key}) : super(key: key);
@@ -47,11 +49,33 @@ class _app_drawerstate extends State<app_drawer>{
               },
             ),
             ListTile(
-              leading: Icon(Icons.dark_mode),
-              title: Text('Dark Mode'),
+              leading: Icon(Icons.calculate),
+              title: Text('IntCalculator'),
               onTap: () {
-                print('Dark Mode button tapped');
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => InterestCalculator()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.calculate),
+              title: Text('CuConverter'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CurrencyConverter()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.calculate),
+              title: Text('CmpCalculator'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CompoundInterestCalculator()),
+                );
               },
             ),
             ListTile(
