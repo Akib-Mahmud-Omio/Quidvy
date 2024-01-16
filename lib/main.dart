@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:quidvy/pages/login.dart';
 import 'firebase_options.dart';
 
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

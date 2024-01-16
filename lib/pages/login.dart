@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quidvy/pages/bottomnavigationbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 class LoginPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -79,8 +80,32 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-
 class SignUpPage extends StatelessWidget {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController phoneNumberController = TextEditingController();
+
+  Future<void> _signUpWithEmailAndPassword(BuildContext context) async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+
+      await FirebaseFirestore.instance.collection('users').doc(userCredential.user!.uid).set({
+        'email': emailController.text,
+        'phoneNumber': phoneNumberController.text,
+        'currentBalance': 0.0,
+        'income': 0.0,
+        'expenses': 0.0,
+      });
+
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      print("Error: ${e.message}");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,12 +120,14 @@ class SignUpPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TextField(
+              controller: emailController,
               decoration: InputDecoration(
                 hintText: 'Email',
               ),
             ),
             SizedBox(height: 12.0),
             TextField(
+              controller: passwordController,
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Password',
@@ -108,15 +135,14 @@ class SignUpPage extends StatelessWidget {
             ),
             SizedBox(height: 12.0),
             TextField(
+              controller: phoneNumberController,
               decoration: InputDecoration(
                 hintText: 'Phone Number',
               ),
             ),
             SizedBox(height: 20.0),
             ElevatedButton(
-              onPressed: () {
-                // TODO: Implement sign up functionality
-              },
+              onPressed: () => _signUpWithEmailAndPassword(context),
               child: Text('Create Account'),
             ),
           ],
@@ -125,6 +151,8 @@ class SignUpPage extends StatelessWidget {
     );
   }
 }
+
+
 
 class ForgotPasswordPage extends StatelessWidget {
   @override

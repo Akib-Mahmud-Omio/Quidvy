@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quidvy/pages/app_drawer.dart';
 import 'package:quidvy/pages/homepage.dart';
 import 'package:quidvy/pages/statistics.dart';
-
+import 'package:quidvy/pages/add_screen.dart';
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -20,7 +20,12 @@ class _BottomState extends State<Bottom> {
     return Scaffold(
       body: Screen[index],
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddScreen(userEmail: 'akibmahmudomio@gmail.com',)),
+          );
+        },
         child: Icon(Icons.add,
           size: 30,
         ),
