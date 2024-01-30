@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'dart:math';
+
 class CompoundInterestCalculator extends StatefulWidget {
   @override
   _CompoundInterestCalculatorState createState() =>
@@ -28,47 +30,59 @@ class _CompoundInterestCalculatorState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          TextField(
-            controller: principalController,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(labelText: 'Principal Amount'),
-          ),
-          TextField(
-            controller: rateController,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(labelText: 'Annual Interest Rate (%)'),
-          ),
-          TextField(
-            controller: timeController,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(labelText: 'Time (years)'),
-          ),
-          TextField(
-            controller: frequencyController,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(labelText: 'Compounding Frequency'),
-          ),
-          SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              double compoundInterest = calculateCompoundInterest();
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Compound Interest: $compoundInterest'),
-                ),
-              );
-            },
-            child: Text('Calculate'),
-          ),
-        ],
+      appBar: AppBar(
+        title: Text('Compound Interest Calculator'),
+        backgroundColor:Colors.orange,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); // This will pop the current screen and go back
+          },
+        ),
       ),
-    ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextField(
+              controller: principalController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(labelText: 'Principal Amount'),
+            ),
+            TextField(
+              controller: rateController,
+              keyboardType: TextInputType.number,
+              decoration:
+              InputDecoration(labelText: 'Annual Interest Rate (%)'),
+            ),
+            TextField(
+              controller: timeController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(labelText: 'Time (years)'),
+            ),
+            TextField(
+              controller: frequencyController,
+              keyboardType: TextInputType.number,
+              decoration:
+              InputDecoration(labelText: 'Compounding Frequency'),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                double compoundInterest = calculateCompoundInterest();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Compound Interest: $compoundInterest'),
+                  ),
+                );
+              },
+              child: Text('Calculate'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
