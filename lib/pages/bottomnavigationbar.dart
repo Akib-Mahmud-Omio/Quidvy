@@ -3,6 +3,7 @@ import 'package:quidvy/pages/app_drawer.dart';
 import 'package:quidvy/pages/homepage.dart';
 import 'package:quidvy/pages/statistics.dart';
 import 'package:quidvy/pages/add_screen.dart';
+import 'package:quidvy/pages/card.dart';
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -94,7 +95,7 @@ class _BottomState extends State<Bottom> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 28.0), 
                   child: Icon(
-                    Icons.account_balance_wallet_outlined,
+                    Icons.add_card,
                     size: 30,
                     color: index == 3 ? Color(0xfff25a18) : Colors.blueGrey,
                   ),

@@ -28,6 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  flip_card: ^0.6.0
+  patterns_canvas: ^0.4.0
   flutter:
     sdk: flutter
   syncfusion_flutter_charts: ^24.1.44+1
