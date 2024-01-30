@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:quidvy/pages/add_data.dart';
@@ -27,15 +28,14 @@ class _AddScreenState extends State<AddScreen> {
   String? selctedItemi;
 
   List<String> _item = [
+    'Home',
     'Food',
     'Transport',
     'Education',
-  ];
-
-  List<String> _itemei = [
-    'Salary',
-    'Business',
-    'Gift',
+    'Treatment',
+    'Dress',
+    'Transfer',
+    'Others',
   ];
 
   @override
@@ -51,7 +51,6 @@ class _AddScreenState extends State<AddScreen> {
       print('Error: userEmail is null in initState.');
     }
   }
-
 
   @override
   void dispose() {
@@ -109,7 +108,8 @@ class _AddScreenState extends State<AddScreen> {
 
   void updateBalance(double amount, {required bool isExpense}) async {
     try {
-      DocumentSnapshot<Map<String, dynamic>> userDoc = await _usersCollection.doc(widget.userEmail).get() as DocumentSnapshot<Map<String, dynamic>>;
+      DocumentSnapshot<Map<String, dynamic>> userDoc =
+      await _usersCollection.doc(widget.userEmail).get() as DocumentSnapshot<Map<String, dynamic>>;
 
       double currentBalance = userDoc['currentBalance'] ?? 0.0;
 
@@ -129,7 +129,7 @@ class _AddScreenState extends State<AddScreen> {
     return GestureDetector(
       onTap: () {
         var add = AddData(
-          selctedItemi!,
+          selctedItem!,
           amount_c.text,
           date,
           expalin_C.text,
@@ -137,6 +137,7 @@ class _AddScreenState extends State<AddScreen> {
           widget.userEmail,
           'expenses',
         );
+
 
         if (add.type == 'expenses') {
           _expensesCollection.add(add.toJson());
@@ -219,7 +220,7 @@ class _AddScreenState extends State<AddScreen> {
               selctedItemi = value!;
             });
           }),
-          items: _itemei
+          items: _item
               .map((e) => DropdownMenuItem(
             child: Container(
               alignment: Alignment.center,
@@ -235,7 +236,7 @@ class _AddScreenState extends State<AddScreen> {
             value: e,
           ))
               .toList(),
-          selectedItemBuilder: (BuildContext context) => _itemei
+          selectedItemBuilder: (BuildContext context) => _item
               .map((e) => Row(
             children: [Text(e)],
           ))
@@ -415,3 +416,4 @@ class _AddScreenState extends State<AddScreen> {
     );
   }
 }
+
