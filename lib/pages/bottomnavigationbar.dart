@@ -13,7 +13,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index = 2;
-  List Screen = [app_drawer(), Statistics(), Home(), Statistics()];
+  List Screen = [app_drawer(), Statistics(), Home(userEmail: 'akibmahmudomio@gmail.com'), Statistics()];
 
   @override
   Widget build(BuildContext context) {
