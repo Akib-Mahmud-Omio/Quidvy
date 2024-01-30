@@ -5,6 +5,9 @@ import 'package:quidvy/pages/interest_calculator.dart';
 import 'package:quidvy/pages/currency.dart';
 import 'package:quidvy/pages/compound_calculator.dart';
 import 'package:quidvy/pages/resource.dart';
+import 'package:quidvy/pages/goals.dart';
+import 'package:quidvy/pages/student_money.dart';
+import 'package:quidvy/pages/loan.dart';
 
 class app_drawer extends StatefulWidget {
   const app_drawer({Key? key}) : super(key: key);
@@ -42,11 +45,31 @@ class _app_drawerstate extends State<app_drawer>{
       ),
     ),
             ListTile(
+              leading: Icon(Icons.calculate),
+              title: Text('Money Management'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => student()),
+                );
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.notifications),
               title: Text('Notifications'),
               onTap: () {
                 print('Notifications button tapped');
                 Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.calculate),
+              title: Text('Loan Management'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoanDetailsScreen()),
+                );
               },
             ),
             ListTile(
@@ -59,7 +82,7 @@ class _app_drawerstate extends State<app_drawer>{
                 );
               },
             ),
-            ListTile(
+            /*ListTile(
               leading: Icon(Icons.calculate),
               title: Text('CuConverter'),
               onTap: () {
@@ -68,7 +91,7 @@ class _app_drawerstate extends State<app_drawer>{
                   MaterialPageRoute(builder: (context) => CurrencyConverter()),
                 );
               },
-            ),
+            ),*/
             ListTile(
               leading: Icon(Icons.calculate),
               title: Text('CmpCalculator'),
@@ -79,6 +102,17 @@ class _app_drawerstate extends State<app_drawer>{
                 );
               },
             ),
+            ListTile(
+              leading: Icon(Icons.calculate),
+              title: Text('Savings Goals'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GoalScreen()),
+                );
+              },
+            ),
+
             ListTile(
               leading: Icon(Icons.info),
               title: Text('About Us'),
