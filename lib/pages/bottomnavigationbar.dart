@@ -3,6 +3,7 @@ import 'package:quidvy/pages/app_drawer.dart';
 import 'package:quidvy/pages/homepage.dart';
 import 'package:quidvy/pages/statistics.dart';
 import 'package:quidvy/pages/add_screen.dart';
+import 'package:quidvy/pages/card.dart';
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index = 2;
-  List Screen = [app_drawer(), Statistics(), Home(), Statistics()];
+  List Screen = [app_drawer(), Statistics(), Home(), card()];
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +95,7 @@ class _BottomState extends State<Bottom> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 28.0), 
                   child: Icon(
-                    Icons.account_balance_wallet_outlined,
+                    Icons.add_card,
                     size: 30,
                     color: index == 3 ? Color(0xfff25a18) : Colors.blueGrey,
                   ),
